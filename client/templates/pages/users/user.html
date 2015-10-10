@@ -1,0 +1,10 @@
+<template name="user">
+    <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">{{user.profile.name}}</h1>
+    </div>
+  </div>
+
+  {{>smallPanel color="green" label="Plants" icon="pagelines" value=qtyPlants}}
+  {{>smallPanel color="red" label="Friends" icon="users" value=friends}}
+</template>
