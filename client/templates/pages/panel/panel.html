@@ -68,63 +68,30 @@
 
 
 <template name="plantPanel">
-	<div class="col-lg-6">
-	    <div class="panel panel-default" >
-	        <div class="panel-heading">
-	           {{plantName}} @ {{location}} <div class="owner"> Owner: {{owner userId}}  </div>
-	        </div>
-	        <div class="panel-body">
-		        <div class = "row">
-		        	<div class = "col-xs-9">
-			        		<h3>Latest Readings</h3>
-			        		<p>
-		  					  {{#each sensor in sensors}}
-							    {{> sensorLatest type=sensor plantId=_id}}
-							  {{/each}}
-			        		</p>
-		        	</div>
-		        	<div class = "col-xs-3">
-			        	<p>
-			        	<img src = "img/{{plantName}}.jpg" class = "plant-img">
-			        	</p>
-		        	</div>
-		        </div>
-		        <div class = "row">		        
-                    <div class = "col-xs-4 col-xs-offset-8">
-                	</div>
-		        </div>
-	        </div>
-	        <div class="panel-footer">
-	            Plant Type: TODO <button type="button" class="btn btn-info">See More Info</button>
-	        </div>
-	    </div>
-	</div>
+  {{#bigPanel panelHeading=heading panelFooter=footer}}
+    <div class = "row">
+      <div class = "col-xs-9">
+          <h3 style="margin-top: 0;">Latest Readings</h3>
+          <ul>
+          {{#each sensor in sensors}}
+            {{> sensorLatest type=sensor plantId=_id}}
+          {{/each}}
+          </ul>
+      </div>
+      <div class = "col-xs-3 text-center">
+        <img src = "img/{{plantName}}.jpg" class = "plant-img">
+      </div>
+    </div>
+  {{/bigPanel}}
 
 
 </template>
 
 
 <template name="sensorLatest">
-   <div class = "row">
-    <div class = "col-xs-2">
-		  <img src = "img/{{type}}.jpg" class = "sensor-img">
-   </div>
-   <div class = "col-xs-6">
-   		  <div class = "capatalize"> {{type}} </div>
-   </div>
-   <div class = "col-xs-4">
-		  {{#each latestdatapoint}}
-		    <div class = "latestSensorReading"> {{value}}</div> 
-		  {{/each}}
-   </div>
-  </div>
-  <div class = "row">
-	<div class = "col-xs-10 col-xs-offset-2">
-	  {{#each latestdatapoint}}
-		<div class = "time-at">measured at {{date}}</div>
-	  {{/each}}
-	</div>
-  </div>
+  <li>
+    <h4><i class="fa fa-{{icon}}"></i> {{typeName}} <strong>{{latestdatapoint.value}}</strong> <small>{{timeFromX latestdatapoint.date}}</small></h4>
+  </li>
 </template>
 
 

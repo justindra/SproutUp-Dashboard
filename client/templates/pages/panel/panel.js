@@ -20,7 +20,25 @@ Template.sensorLatest.created = function () {
 
 Template.sensorLatest.helpers({
     latestdatapoint: function () {
-        return Data.find({plantId: this.plantId, sensorType: this.type}, {sort: [["rank", "desc"]], limit:1});
+        return Data.findOne({plantId: this.plantId, sensorType: this.type}, {sort: [["rank", "desc"]]});
+    },
+    icon: function () {
+        if (this.type == 'moist') {
+            return 'tint';
+        } else if (this.type == 'temp') {
+            return 'fire';
+        } else if (this.type == 'light') {
+            return 'sun-o';
+        }
+    },
+    typeName: function () {
+        if (this.type == 'moist') {
+            return 'moisture';
+        } else if (this.type == 'temp') {
+            return 'temperature';
+        } else if (this.type == 'light') {
+            return 'light';
+        } 
     }
 });
 
@@ -40,6 +58,13 @@ Template.sensorDisplay.helpers({
 Template.plantPanel.helpers({
     owner: function (ownerid) {
         return Meteor.users.findOne({_id: ownerid}).profile.name;
+    },
+    heading: function () {
+        var name = Meteor.users.findOne(this.userId).profile.name;
+        return this.plantName + ' @ ' + this.location + '<div class="owner">Owner: ' + name + '</div>';
+    },
+    footer: function () {
+        return 'Plant Type: TODO <button type="button" class="btn btn-info">See More Info</button>';
     }
 });
 

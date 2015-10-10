@@ -9,7 +9,7 @@
   {{/each}}
 </template>
 
-<template name="plantPanel">
+<template name="plantPanelPlain">
   <div>
     {{_id}} AKA {{plantName}} @ {{location}}
     <ul>
@@ -20,7 +20,7 @@
   </div>
 </template>
 
-<template name="sensorDisplay">
+<template name="sensorDisplayPlain">
   <li>{{type}}
     <ul>
       {{#each datapoint}}
