@@ -1,6 +1,6 @@
 Meteor.startup(function () {
     if(Meteor.users.find().count() < 1) {
-        Accounts.createUser({
+        var joeId = Accounts.createUser({
             username: 'joeschmoe',
             password: 'password',
             email: 'joe@schmoe.com',
@@ -8,6 +8,8 @@ Meteor.startup(function () {
                 name: 'Joe Schmoe'
             }
         });
+
+        Roles.addUsersToRoles(joeId, 'admin');
     }
 
     if (Plants.find().count() < 1) {
