@@ -11,8 +11,21 @@
 
 <template name="plantPanel">
   <div>
-    {{_id}}
-    {{plantName}}
-    {{location}}
+    {{_id}} AKA {{plantName}} @ {{location}}
+    <ul>
+      {{#each sensor in sensors}}
+        {{> sensorDisplay type=sensor plantId=_id}}
+      {{/each}}
+    </ul>
   </div>
+</template>
+
+<template name="sensorDisplay">
+  <li>{{type}}
+    <ul>
+      {{#each datapoint}}
+        <li>{{date}} - {{value}}</li>
+      {{/each}}
+    </ul>
+  </li>
 </template>

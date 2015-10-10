@@ -12,11 +12,12 @@ Meteor.startup(function () {
 
     if (Plants.find().count() < 1) {
         var plantId = Meteor.call('createPlant', {
-            userId: Meteor.users.findOne()._id,
             plantName: 'conifer',
-            location: 'ma-house'
+            userId: Meteor.users.findOne()._id,
+            location: 'ma-house',
+            sensors: ['moist']
         });
-        Meteor.call('insertDataPoint', plantId, 20);
+        Meteor.call('insertDataPoint', plantId, 'moist', 20, Meteor.users.findOne()._id);
     }
 
 });
