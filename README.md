@@ -4,6 +4,15 @@ This is a dashboard web app built in meteor for the [Sprout Up](https://github.c
 You can view the whole project overview [here](http://sproutup.info/)
 
 #The Dasboard
+
+#Installation
+
+````
+git clone repo
+cd cloned/dir/of/repo
+meteor
+````
+
 TODO: EXPLAIN DASHBOARD
 ![alt tag](https://raw.githubusercontent.com/JaredPage/SproutUp-Comms/master/setup.jpg)
 
