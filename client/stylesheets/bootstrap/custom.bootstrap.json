@@ -12,12 +12,12 @@
     "forms"                : true,
     "buttons"              : true,
 
-    "component-animations" : false,
-    "dropdowns"            : false,
-    "button-groups"        : false,
-    "input-groups"         : false,
-    "navs"                 : false,
-    "navbar"               : false,
+    "component-animations" : true,
+    "dropdowns"            : true,
+    "button-groups"        : true,
+    "input-groups"         : true,
+    "navs"                 : true,
+    "navbar"               : true,
     "breadcrumbs"          : false,
     "pagination"           : false,
     "pager"                : false,
@@ -29,7 +29,7 @@
     "alerts"               : false,
     "progress-bars"        : false,
     "media"                : false,
-    "list-group"           : false,
+    "list-group"           : true,
     "panels"               : true,
     "responsive-embed"     : false,
     "wells"                : false,
@@ -42,13 +42,13 @@
 
     "affix"                : false,
     "alert"                : false,
-    "button"               : false,
-    "collapse"             : false,
+    "button"               : true,
+    "collapse"             : true,
     "scrollspy"            : false,
     "tab"                  : false,
     "transition"           : false,
 
     "utilities"            : false,
-    "responsive-utilities" : false
+    "responsive-utilities" : true
   }
 }
