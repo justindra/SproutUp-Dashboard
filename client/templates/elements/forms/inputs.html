@@ -1,0 +1,10 @@
+<template name="inputText">
+  <div class="form-group">
+    <label>{{label}}</label>
+    <input class="form-control" type="{{#unless type}}text{{else}}{{type}}{{/unless}}" name="{{name}}">
+  </div>
+</template>
+
+<template name="inputSubmit">
+  <input class="btn btn-default" type="submit" value="{{#if label}}{{label}}{{else}}Save{{/if}}">
+</template>
