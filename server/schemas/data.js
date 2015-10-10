@@ -13,7 +13,8 @@ DataSchema = new SimpleSchema({
         allowedValues: ['light', 'temp', 'moist']
     },
     value: {
-        type: Number
+        type: Number,
+        decimal: true
     },
     date: {
         type: Date,

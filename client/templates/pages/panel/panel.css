@@ -1,3 +1,55 @@
 .plant-img {
-	width:10%;
+	width:100%;
+}
+
+.sensor-img {
+	width:40px;
+	height:80px;
+}
+
+.plants-drag .panel-body {
+    min-height:500px;
+    max-height:500px;
+}
+
+.panel-heading:first-letter {
+    text-transform:capitalize;
+}
+
+.capatalize {	
+    display:inline-block;
+	font-size:40pt;
+}
+
+
+.capatalize:first-letter {	
+    text-transform:capitalize;
+}
+
+.latestSensorReading {
+	background-color: lightgrey;
+	padding:5px 20px 5px 20px;
+	display:inline-block;
+	font-size:40pt;
+	margin:0 20px 0 20px;
+}
+
+.time-at {
+	font-size:10pt;
+	display:inline-block;
+}
+
+.panel-footer {
+	min-height:50px;
+}
+
+.panel-footer .btn {
+	float:right;
+	margin-right:20px;
+	margin-bottom:20px;
+}
+
+.panel-heading .owner {
+	float:right;
+	margin-right: 20px;
 }

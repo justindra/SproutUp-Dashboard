@@ -1,233 +1,139 @@
 <template name="panel">
 <div class='wrapper'>
 			 <div class = "row">
-			 	 <div class = "col-xs-4">
+			 	 <div class = "col-xs-6">
 				 	<h1>News</h1>
 				 </div>
-				 <div class = "col-xs-4">
+				 <div class = "col-xs-6">
 				 	<h1>Healthiest Plants</h1>
-				 </div>
-				 <div class = "col-xs-4">
-				 	<h1>Top Users</h1>
 				 </div>
 			 </div>
 
             <div class="row testingdrag">
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="panel panel-default" >
                         <div class="panel-heading">
-                            Default Panel
+                            Current News
                         </div>
                         <div class="panel-body">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
+                            Urgent plant alerts: none
                         </div>
                     </div>
                 </div>
                 <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            Primary Panel
+                            Most Healthy
                         </div>
                         <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        	<ol>
+							  {{#each plants}}
+							    <li> {{plantName}}</li>
+							  {{/each}}
+							</ol>
                         </div>
                         <div class="panel-footer">
-                            Panel Footer
+                            Least Healthy
                         </div>
                     </div>
                 </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            Success Panel
-                        </div>
-                        <div class="panel-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-                        </div>
-                        <div class="panel-footer">
-                            Panel Footer
-                        </div>
-                    </div>
-                </div>
-                <!-- /.col-lg-4 -->
             </div>
 
-
-
 			 <div class = "row">
-				 <div class = "col-xs-6">
+				 <div class = "col-xs-12">
 				 	<h1>Plants</h1>
-					<div class = "plants-drag">
-		                <div class="col-lg-6">
-		                    <div class="panel panel-default" >
-		                        <div class="panel-heading">
-		                            Jared's Plant
-		                        </div>
-		                        <div class="panel-body">
-		                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-		                        	<p>
-		                        	<img src = "conifer.jpeg" class = "plant-img">
-		                        	</p>
-		                        </div>
-		                        <div class="panel-footer">
-		                            Panel Footer
-		                        </div>
-		                    </div>
-		                </div>
+					<div class = "plants-drag">						
 
-
-		                <div class="col-lg-6">
-		                    <div class="panel panel-default" >
-		                        <div class="panel-heading">
-		                            Justin's Plant
-		                        </div>
-		                        <div class="panel-body">
-		                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-		                        	<p>
-		                        	<img src = "conifer.jpeg" class = "plant-img">
-		                        	</p>
-		                        </div>
-		                        <div class="panel-footer">
-		                            Panel Footer
-		                        </div>
-		                    </div>
-		                </div>
-
-
-		                <div class="col-lg-6">
-		                    <div class="panel panel-default" >
-		                        <div class="panel-heading">
-		                            Anonymous Plant 1
-		                        </div>
-		                        <div class="panel-body">
-		                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-		                            <p>
-		                        	<img src = "conifer.jpeg" class = "plant-img">
-		                        	</p>
-		                        </div>
-		                        <div class="panel-footer">
-		                            Panel Footer
-		                        </div>
-		                    </div>
-		                </div>
-
-
-		                <div class="col-lg-6">
-		                    <div class="panel panel-default" >
-		                        <div class="panel-heading">
-		                            Anonymous Plant 2
-		                        </div>
-		                        <div class="panel-body">
-		                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>	<p>
-		                        	<img src = "conifer.jpeg" class = "plant-img">
-		                        	</p>
-		                        </div>
-		                        <div class="panel-footer">
-		                            Panel Footer
-		                        </div>
-		                    </div>
-		                </div>
-					</div>
-				 </div>
-				 <div class = "col-xs-6">
-				 	<h1>Users</h1>
-					<div class = "users-drag">
-
-		                <div class="col-lg-4">
-		                    <div class="panel panel-default" >
-		                        <div class="panel-heading">
-		                            Jared Page
-		                        </div>
-		                        <div class="panel-body">
-		                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-		                        </div>
-		                        <div class="panel-footer">
-		                            Panel Footer
-		                        </div>
-		                    </div>
-		                </div>
-
-		                <div class="col-lg-4">
-		                    <div class="panel panel-default" >
-		                        <div class="panel-heading">
-		                            Justin Rahardjo
-		                        </div>
-		                        <div class="panel-body">
-		                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-		                        </div>
-		                        <div class="panel-footer">
-		                            Panel Footer
-		                        </div>
-		                    </div>
-		                </div>
-
-		                <div class="col-lg-4">
-		                    <div class="panel panel-default" >
-		                        <div class="panel-heading">
-		                            Anonymous User
-		                        </div>
-		                        <div class="panel-body">
-		                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-		                        </div>
-		                        <div class="panel-footer">
-		                            Panel Footer
-		                        </div>
-		                    </div>
-		                </div>
-
-		                <div class="col-lg-4">
-		                    <div class="panel panel-default" >
-		                        <div class="panel-heading">
-		                            Mr Derp
-		                        </div>
-		                        <div class="panel-body">
-		                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-		                        </div>
-		                        <div class="panel-footer">
-		                            Panel Footer
-		                        </div>
-		                    </div>
-		                </div>
-
-		                <div class="col-lg-4">
-		                    <div class="panel panel-default" >
-		                        <div class="panel-heading">
-		                            Mr Herp
-		                        </div>
-		                        <div class="panel-body">
-		                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-		                        </div>
-		                        <div class="panel-footer">
-		                            Panel Footer
-		                        </div>
-		                    </div>
-		                </div>
-
-		                <div class="col-lg-4">
-		                    <div class="panel panel-default" >
-		                        <div class="panel-heading">
-		                            Anonymous User 2
-		                        </div>
-		                        <div class="panel-body">
-		                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
-		                        </div>
-		                        <div class="panel-footer">
-		                            Panel Footer
-		                        </div>
-		                    </div>
-		                </div>
+					  {{#each plants}}
+					    {{> plantPanel}}
+					  {{/each}}
 
 					</div>
 				 </div>
+				
 			 </div>
 
 </div>
 
 
 
+</template>
+
+
+
+
+
+<template name="plantPanel">
+	<div class="col-lg-6">
+	    <div class="panel panel-default" >
+	        <div class="panel-heading">
+	           {{plantName}} @ {{location}} <div class="owner"> Owner: {{owner userId}}  </div>
+	        </div>
+	        <div class="panel-body">
+		        <div class = "row">
+		        	<div class = "col-xs-9">
+			        		<h3>Latest Readings</h3>
+			        		<p>
+		  					  {{#each sensor in sensors}}
+							    {{> sensorLatest type=sensor plantId=_id}}
+							  {{/each}}
+			        		</p>
+		        	</div>
+		        	<div class = "col-xs-3">
+			        	<p>
+			        	<img src = "img/{{plantName}}.jpg" class = "plant-img">
+			        	</p>
+		        	</div>
+		        </div>
+		        <div class = "row">		        
+                    <div class = "col-xs-4 col-xs-offset-8">
+                	</div>
+		        </div>
+	        </div>
+	        <div class="panel-footer">
+	            Plant Type: TODO <button type="button" class="btn btn-info">See More Info</button>
+	        </div>
+	    </div>
+	</div>
+
+
+</template>
+
+
+<template name="sensorLatest">
+   <div class = "row">
+    <div class = "col-xs-2">
+		  <img src = "img/{{type}}.jpg" class = "sensor-img">
+   </div>
+   <div class = "col-xs-6">
+   		  <div class = "capatalize"> {{type}} </div>
+   </div>
+   <div class = "col-xs-4">
+		  {{#each latestdatapoint}}
+		    <div class = "latestSensorReading"> {{value}}</div> 
+		  {{/each}}
+   </div>
+  </div>
+  <div class = "row">
+	<div class = "col-xs-10 col-xs-offset-2">
+	  {{#each latestdatapoint}}
+		<div class = "time-at">measured at {{date}}</div>
+	  {{/each}}
+	</div>
+  </div>
+</template>
+
+
+<template name="sensorDisplay">
+  <li>{{type}}
+    <ul>
+      {{#each datapoint}}
+        <li>{{date}} - {{value}}</li>
+      {{/each}}
+    </ul>
+  </li>
 </template>
