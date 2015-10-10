@@ -8,6 +8,12 @@ Meteor.startup(function () {
                 name: 'Joe Schmoe'
             }
         });
+<<<<<<< HEAD
+=======
+
+        Roles.addUsersToRoles(joeId, 'admin');
+        
+>>>>>>> origin/master
         Accounts.createUser({
             username: 'jaredpage',
             password: 'password',
@@ -25,7 +31,10 @@ Meteor.startup(function () {
             }
         });
 
+<<<<<<< HEAD
         Roles.addUsersToRoles(joeId, 'admin');
+=======
+>>>>>>> origin/master
     }
 
     if (Plants.find().count() < 1) {

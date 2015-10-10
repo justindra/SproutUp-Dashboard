@@ -25,9 +25,11 @@
                         <li>
                             <a href="{{pathFor 'panel'}}"><i class="fa fa-file-o fa-fw"></i> Panels</a>
                         </li>
+                        {{#if isInRole 'admin'}}
                         <li>
                             <a href="{{pathFor 'users'}}"><i class="fa fa-users fa-fw"></i> Users</a>
                         </li>
+                        {{/if}}
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
