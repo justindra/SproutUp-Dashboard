@@ -9,7 +9,9 @@ Meteor.methods({
                     sensorType: type,
                     value: value
                 });
-            } else throw new Meteor.Error(404, 'Can\'t find type of sensor on plant!')
-        } else throw new Meteor.Error(401, 'You don\'t have access to this plant!')
+            } else  return new Meteor.Error(404, 'Can\'t find type of sensor on plant!');
+        } else {
+            return new Meteor.Error(401, 'You don\'t have access to this plant!');
+        }
     }
 });
