@@ -42,3 +42,10 @@ Template.plantPanel.helpers({
         return Meteor.users.findOne({_id: ownerid}).profile.name;
     }
 });
+
+
+Template.plantPanel.events({
+	'click .btn.btn-info': function (evt, template) {
+		Router.go('plantDetail');
+	}
+});
