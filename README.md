@@ -7,6 +7,24 @@ You can view the whole project overview [here](http://sproutup.info/)
 TODO: EXPLAIN DASHBOARD
 ![alt tag](https://raw.githubusercontent.com/JaredPage/SproutUp-Comms/master/setup.jpg)
 
+#API
+
+To add data into the db, you can use a REST API,
+
+First you need to login
+
+````bash
+curl http://localhost:3000/api/v1/login -d "username=joeschmoe&password=password"
+````
+
+This will return a authtoken and a userId, use these values for the next calls
+
+````bash
+curl -X POST http://localhost:3000/api/v1/data/:plantId?type=light&value=45 -H "X-Auth-Token: authtoken"  -H "X-User-Id: userId"
+````
+
+The plantId is the given plant id specified in the dashboard, the type is the sensor type (light, moist or temp), the value is the value of the sensor.
+
 ## Latest Updates
 N/A
 

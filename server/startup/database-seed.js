@@ -1,12 +1,4 @@
 Meteor.startup(function () {
-    if (Plants.find().count() < 1) {
-        var plantId = Meteor.call('createPlant', {
-            plantName: 'conifer',
-            location: 'ma-house'
-        });
-        Meteor.call('insertDataPoint', plantId, 20);
-    }
-
     if(Meteor.users.find().count() < 1) {
         Accounts.createUser({
             username: 'joeschmoe',
@@ -17,4 +9,15 @@ Meteor.startup(function () {
             }
         });
     }
+
+    if (Plants.find().count() < 1) {
+        var plantId = Meteor.call('createPlant', {
+            plantName: 'conifer',
+            userId: Meteor.users.findOne()._id,
+            location: 'ma-house',
+            sensors: ['moist']
+        });
+        Meteor.call('insertDataPoint', plantId, 'moist', 20, Meteor.users.findOne()._id);
+    }
+
 });
