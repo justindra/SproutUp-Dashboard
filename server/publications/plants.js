@@ -18,12 +18,12 @@ Meteor.publish('plant', function (plantId) {
     }
 });
 
-Meteor.publish('plantData', function (plantId) {
+Meteor.publish('plantData', function (plantId, type) {
     var plant = Plants.findOne(plantId);
     if((this.userId == plant.userId) || Roles.userIsInRole(this.userId, 'admin')) {
         return [
             Plants.find(plantId),
-            Data.find({plantId: plantId}, {sort: {date: 1}, limit: 20})
+            Data.find({plantId: plantId, sensorType: type}, {sort: {date: -1}, limit: 20})
         ]
     }
 });

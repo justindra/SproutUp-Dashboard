@@ -4,15 +4,26 @@
       <h1 class="page-header">This is the plant detail for {{plantName}}</h1>
     </div>
   </div>
-  {{#each sensor in sensors}}
-    <div class="col-md-6">
-      {{> sensorChartPanel type=sensor plantId=plantId}}
-    </div>
-  {{/each}}
+  <div class="row">
+    {{#each sensor in sensors}}
+        {{> sensorLastReadingPanel type=sensor plantId=plantId}}
+    {{/each}}
+  </div>
+  <div class="row">
+    {{#each sensor in sensors}}
+      <div class="col-md-6">
+        {{> sensorChartPanel type=sensor plantId=plantId}}
+      </div>
+    {{/each}}
+  </div>
 </template>
 
 <template name="sensorChartPanel">
   {{#bigPanel panelHeading=heading}}
     <div id="{{plantId}}{{type}}" class="ct-chart ct-perfect-fourth"></div>
   {{/bigPanel}}
+</template>
+
+<template name="sensorLastReadingPanel">
+  {{> smallPanel icon=icon value=value label=label color=color}}
 </template>

@@ -18,7 +18,7 @@ Template.sensorChartPanel.created = function () {
     var instance = this;
 
     instance.chart = new ReactiveVar(null);
-    instance.subscribe('plantData', this.data.plantId, function () {
+    instance.subscribe('plantData', this.data.plantId, this.data.type, function () {
         instance.autorun(function () {
             var chart = instance.chart.get();
             var datapoints = Data.find({plantId: instance.data.plantId, sensorType: instance.data.type}, {sort: {date: 1}});
@@ -51,5 +51,22 @@ Template.sensorChartPanel.helpers({
         } else if(this.type == 'temp') {
             return 'TEMPERATURE READING';
         }
+    }
+});
+
+Template.sensorLastReadingPanel.helpers({
+    icon: function () {
+        return getIconForSensor(this.type);
+    },
+    color: function () {
+        return getColorForSensor(this.type);
+    },
+    label: function () {
+        var data = Data.findOne({plantId: this.plantId, sensorType: this.type}, {sort: {date: -1}});
+        return data && moment(data.date).fromNow() || '';
+    },
+    value: function () {
+        var data = Data.findOne({plantId: this.plantId, sensorType: this.type}, {sort: {date: -1}});
+        return data && data.value || 'X';
     }
 });

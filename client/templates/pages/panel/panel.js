@@ -23,13 +23,7 @@ Template.sensorLatest.helpers({
         return Data.findOne({plantId: this.plantId, sensorType: this.type}, {sort: [["rank", "desc"]]});
     },
     icon: function () {
-        if (this.type == 'moist') {
-            return 'tint';
-        } else if (this.type == 'temp') {
-            return 'fire';
-        } else if (this.type == 'light') {
-            return 'sun-o';
-        }
+        return getIconForSensor(this.type);
     },
     typeName: function () {
         if (this.type == 'moist') {
