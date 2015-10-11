@@ -8,3 +8,16 @@
 <template name="inputSubmit">
   <input class="btn btn-default" type="submit" value="{{#if label}}{{label}}{{else}}Save{{/if}}">
 </template>
+
+<template name="inputSelect">
+<div class="form-group">
+  <label>{{label}}</label>
+  {{#each check in checkboxes}}
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" name="{{name}}" value="{{check.value}}">{{check.label}}
+        </label>
+    </div>
+  {{/each}}
+</div>
+</template>

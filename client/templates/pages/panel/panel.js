@@ -58,7 +58,7 @@ Template.plantPanel.helpers({
         return this.plantName + ' @ ' + this.location + '<div class="owner">Owner: ' + name + '</div>';
     },
     footer: function () {
-        return 'Plant Type: TODO <button type="button" class="btn btn-info">See More Info</button>';
+        return 'Plant Type: TODO <div class="pull-right"><button type="button" class="btn btn-danger" style="margin-right: 0px;" data-action="delete"><i class="fa fa-trash-o"></i></button><button type="button" class="btn btn-info">See More Info</button></div>';
     }
 });
 
