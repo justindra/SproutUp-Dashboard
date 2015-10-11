@@ -1,6 +1,5 @@
 Template.plantDetail.created = function () {
     var instance = this;
-
     instance.subscribe('plant', this.data.plantId);
 };
 
@@ -19,10 +18,10 @@ Template.sensorChartPanel.created = function () {
     var instance = this;
 
     instance.chart = new ReactiveVar(null);
-    instance.subscribe('plant', this.data.plantId, function () {
+    instance.subscribe('plantData', this.data.plantId, function () {
         instance.autorun(function () {
             var chart = instance.chart.get();
-            var datapoints = Data.find({plantId: instance.data.plantId, sensorType: instance.data.type});
+            var datapoints = Data.find({plantId: instance.data.plantId, sensorType: instance.data.type}, {sort: {date: 1}});
             if(chart && (datapoints.count() > 0)) {
                 chart.update({
                     labels: _.map(_.pluck(datapoints.fetch(), 'date'), function (data) {
@@ -33,12 +32,8 @@ Template.sensorChartPanel.created = function () {
                     ]
                 });
             }
-            
         });
-        
     });
-
-
 };
 
 Template.sensorChartPanel.rendered = function () {
