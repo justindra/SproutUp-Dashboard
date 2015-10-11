@@ -9,4 +9,14 @@ Meteor.publish('plantDetails', function() {
     if (Roles.userIsInRole(this.userId, 'admin')) {
         return Plants.find({}, {fields: {_id: 1, userId: 1}});
     }
-})
+});
+
+Meteor.publish('plant', function (plantId) {
+    var plant = Plants.findOne(plantId);
+    if((this.userId == plant.userId) || Roles.userIsInRole(this.userId, 'admin')) {
+        return [
+            Plants.find(plantId),
+            Data.find({plantId: plantId})
+        ]
+    }
+});

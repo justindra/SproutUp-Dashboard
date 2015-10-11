@@ -1,5 +1,4 @@
 <template name="bigPanel">
-  <div class="col-lg-6">
     <div class="panel panel-default" >
       <div class="panel-heading">
          {{{panelHeading}}}
@@ -7,9 +6,10 @@
       <div class="panel-body">
         {{> UI.contentBlock}}
       </div>
+      {{#if panelFooter}}
       <div class="panel-footer">
           {{{panelFooter}}}
       </div>
+      {{/if}}
     </div>
-  </div>
 </template>

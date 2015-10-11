@@ -4,9 +4,13 @@
       <h1 class="page-header">Plants</h1>
     </div>
   </div>
+  <div class="row">
   {{#each plants}}
-    {{> plantPanel}}
+    <div class="col-lg-4 col-sm-6 col-xs-12">
+      {{> plantPanel}}
+    </div>
   {{/each}}
+  </div>
 </template>
 
 <template name="plantPanelPlain">

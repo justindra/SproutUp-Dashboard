@@ -71,6 +71,6 @@ Template.plantPanel.helpers({
 
 Template.plantPanel.events({
 	'click .btn.btn-info': function (evt, template) {
-		Router.go('plantDetail');
+		Router.go('plantDetail', {_id: template.data._id});
 	}
 });
