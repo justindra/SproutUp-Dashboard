@@ -2,6 +2,10 @@ Template.registerHelper('timeFromX', function (date) {
     return moment(date).fromNow();
 });
 
+Template.registerHelper('MeteorAbsoluteUrl', function () {
+    return Meteor.absoluteUrl();
+});
+
 getIconForSensor = function (type) {
     if (type == 'moist') {
         return 'tint';

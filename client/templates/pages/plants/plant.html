@@ -4,6 +4,13 @@
       <h1 class="page-header">This is the plant detail for {{plantName}}</h1>
     </div>
   </div>
+    <div class="row">
+    <div class="col-lg-12">
+      <h6>This is the post command required to add data to this plant</h6>
+      <pre>curl -X POST {{MeteorAbsoluteUrl}}/api/v1/data/{{plantId}}?type=<var>sensorType</var>&value=<var>value</var> -H "X-Auth-Token: <var>authtoken</var>"  -H "X-User-Id: <var>userId</var>"</pre>
+      The authtoken and userId is specified when you login. More details in the README
+    </div>
+  </div>
   <div class="row">
     {{#each sensor in sensors}}
         {{> sensorLastReadingPanel type=sensor plantId=plantId}}
