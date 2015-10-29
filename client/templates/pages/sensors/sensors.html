@@ -1,0 +1,55 @@
+<template name="sensors">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Sensors</h1>
+		</div>
+	</div>
+
+    <div class="row">
+    {{#each sensor in sensors}}
+        {{>sensoricon logo=sensor}}
+    {{/each}}
+
+	<div class = "sensor-type">
+        <button type="button" class="btn btn-default btn-circle btn-xl"><i class="fa fa-plus"></i>
+        </button>
+        <div class = "sensor-text"> <h3> Add Sensor </h3> </div>
+	</div>
+                       
+    </div>
+
+</template>
+
+<template name="sensoricon">
+
+	<div class = "sensor-type"> 
+
+	    {{#if equals logo 'moisture'}}
+	        <button type="button" class="btn btn-info btn-circle btn-xl"><i class="fa fa-tint"></i>
+	        </button>
+	    {{/if}}
+
+	    {{#if equals logo 'light'}}
+	        <button type="button" class="btn btn-warning btn-circle btn-xl"><i class="fa fa-sun-o"></i>
+	        </button>
+		{{/if}}
+
+		{{#if equals logo 'temperature'}}
+	        <button type="button" class="btn btn-danger btn-circle btn-xl"><i class="fa fa-fire"></i>
+	        </button>
+		{{/if}}
+
+		{{#if equals logo 'fertilizer'}}
+	        <button type="button" class="btn btn-success btn-circle btn-xl"><i class="fa fa-leaf"></i>
+	        </button>
+		{{/if}}
+
+		{{#if equals logo 'humidity'}}
+	        <button type="button" class="btn btn-primary btn-circle btn-xl"><i class="fa fa-umbrella"></i>
+	        </button>
+		{{/if}}
+
+		<div class = "sensor-text"> <h3> {{logo}} </h3> </div>
+
+	</div>
+</template>

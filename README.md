@@ -38,10 +38,12 @@ The plantId is the given plant id specified in the dashboard, the type is the se
 N/A
 
 ## Planned Updates
-N/A
+API Posting from Rpi !!!!!
+Code Clean Up (Ugh!)
+Better Graphics
 
 ## The Team
 This was made by [Justin Rahardjo](http://justinrahardjo.info/) and [Jared Page](http://jaredpage.net).
 
 ## Acknowledgements
-We would like to thank Rebecca Simpson and Jaco Du Plessis for being part of the iLab team !
+We would like to thank Rebecca Simpson, Matthew Gardener and Jaco Du Plessis for being part of the iLab team !

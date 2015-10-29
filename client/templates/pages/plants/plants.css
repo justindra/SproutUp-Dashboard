@@ -40,13 +40,11 @@
 }
 
 .panel-footer {
-	min-height:50px;
+	min-height:55px;
 }
 
 .panel-footer .btn {
 	float:right;
-	margin-right:20px;
-	margin-bottom:20px;
 }
 
 .panel-heading .owner {

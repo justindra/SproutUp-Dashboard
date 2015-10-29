@@ -10,7 +10,7 @@ DataSchema = new SimpleSchema({
     },
     sensorType: {
         type: String,
-        allowedValues: ['light', 'temp', 'moist']
+        allowedValues: ['light', 'temperature', 'moisture', 'humidity', 'fertilizer']
     },
     value: {
         type: Number,

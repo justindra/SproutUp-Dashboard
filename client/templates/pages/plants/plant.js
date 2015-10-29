@@ -44,11 +44,11 @@ Template.sensorChartPanel.rendered = function () {
 
 Template.sensorChartPanel.helpers({
     heading: function () {
-        if(this.type == 'moist') {
+        if(this.type == 'moisture') {
             return 'MOISTURE READING';
         } else if(this.type == 'light') {
             return 'LIGHT READING';
-        } else if(this.type == 'temp') {
+        } else if(this.type == 'temperture') {
             return 'TEMPERATURE READING';
         }
     }
