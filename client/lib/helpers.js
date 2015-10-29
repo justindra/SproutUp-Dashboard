@@ -36,6 +36,9 @@ getColorForPlant = function(type) {
 //          glyphicon-leaf
 //           fa-vine
 //           fa-tree
+Template.registerHelper('MeteorAbsoluteUrl', function () {
+    return Meteor.absoluteUrl();
+});
 
 getIconForSensor = function (type) {
     if (type == 'moisture') {

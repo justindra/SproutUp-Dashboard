@@ -6,7 +6,7 @@
 
     "scaffolding"          : true,
     "type"                 : true,
-    "code"                 : false,
+    "code"                 : true,
     "grid"                 : true,
     "tables"               : true,
     "forms"                : true,
