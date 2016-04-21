@@ -17,7 +17,7 @@ PlantSchema = new SimpleSchema({
     },
     'sensors.$':{
         type: String,
-        allowedValues: ['light', 'temp', 'moist'],
+        allowedValues: ['light', 'temperature', 'moisture', 'humidity', 'fertilizer'],
         optional: true
     },
     location:  {

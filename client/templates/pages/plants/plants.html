@@ -43,3 +43,56 @@
     </ul>
   </li>
 </template>
+
+
+
+<template name="plantPanel">
+  {{#bigPanel panelHeading=heading panelFooter=footer}}
+    <div class = "row">
+      <div class = "col-xs-9">
+          <h3 style="margin-top: 0;">Latest Readings</h3>
+          <ul>
+          {{#each sensor in sensors}}
+            {{> sensorLatest type=sensor plantId=_id}}
+          {{/each}}
+          </ul>
+      </div>
+      <div class = "col-xs-3 text-center">
+        <!-- <img src = "img/{{plantName}}.jpg" class = "plant-img"> -->
+        <span style = "font-size:80pt; color: {{color}};" class="glyphicon {{icon}}"> </span>
+        <i style = "font-size:80pt; color: {{color}};" class="fa fa-{{icon}}"></i>
+<!--          glyphicon-grain
+        glyphicon-tree-deciduous
+         glyphicon-tree-conifer
+         glyphicon-leaf
+          fa-vine
+          fa-tree
+         glyphicon-fire
+         glyphicon-certificate
+         glyphicon-cutlery
+         glyphicon-heart
+          fa-medkit -->
+      </div>
+    </div>
+  {{/bigPanel}}
+
+
+</template>
+
+
+<template name="sensorLatest">
+  <li>
+    <h4><i class="fa fa-{{icon}}"></i> {{type}} <strong>{{latestdatapoint.value}}</strong> <small>{{timeFromX latestdatapoint.date}}</small></h4>
+  </li>
+</template>
+
+
+<template name="sensorDisplay">
+  <li>{{type}}
+    <ul>
+      {{#each datapoint}}
+        <li>{{date}} - {{value}}</li>
+      {{/each}}
+    </ul>
+  </li>
+</template>
